@@ -1,0 +1,141 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    background-color: #f2f2f2;
+  }
+  
+  
+  #title {
+      font-family: "Playfair Display", serif;
+      text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between; /* This will space out the buttons */
+    align-items: center;
+    padding: 10px;
+}
+
+#buttons {
+    display: flex;
+    gap: 10px; /* Adds spacing between room buttons */
+    justify-content: flex-end; /* Ensures buttons are aligned to the right */
+}
+
+#galleryB {
+    /* Gallery button stays on the left, no changes needed here */
+}
+
+#top button {
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 12px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+
+  nav a {
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 12px;
+    background-color: #eee;
+    border: none;
+    text-decoration: none;
+    color: black;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+
+
+  #container {
+    width: 100vw;
+    height: 100vh;
+    perspective: 1200px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #room {
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transition: transform 1s ease-in-out;
+  }
+  
+  /* Walls */
+  .wall {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Make walls transparent */
+  }
+  
+  .n {
+    transform: rotateY(0deg) translateZ(500px);
+    z-index: -1; /* Ensure front wall is transparent */
+    visibility: hidden; /* Initially hide front wall */
+  }
+  
+  .e {
+    transform: rotateY(90deg) translateZ(500px);
+  }
+  
+  .s {
+    transform: rotateY(180deg) translateZ(500px);
+  }
+  
+  .w {
+    transform: rotateY(-90deg) translateZ(500px);
+  }
+  
+  /* Image styles */
+  .wall img {
+    max-width: 60%;
+    max-height: 80%;
+    object-fit: contain;
+    border: 12px solid #333;
+    background-color: #eee;
+  }
+  
+  /* UI */
+  .ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+  }
+  
+  #title {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .controls button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
